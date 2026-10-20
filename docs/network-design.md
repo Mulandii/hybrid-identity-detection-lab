@@ -124,7 +124,7 @@ Packet walk for `nmap 10.0.10.10` from the host:
 
 - **DNS.** Active Directory depends on DNS SRV records (for example `_ldap._tcp.dc._msdcs.<domain>`) to locate domain controllers and Kerberos services. `ws01` must use `dc01` (10.0.10.10) as its DNS server. If it pointed at pfSense or a public resolver, domain join and authentication would fail. `dc01` forwards queries it cannot answer to pfSense (10.0.10.1).
 - **DHCP.** Running DHCP on `dc01` follows the common Windows enterprise pattern and hands out the gateway (10.0.10.1) and DNS server (10.0.10.10) in one lease. DHCP on pfSense's LAN interface is disabled to avoid two servers answering.
-- **Domain name.** The lab uses an internal AD domain (for example `lab.local`). This will not sync to Entra ID; Phase 5 adds an alternate UPN suffix as described in the project brief.
+- **Domain name.** The lab uses the internal AD domain `lab.internal`, also set as pfSense's domain. `.local` was rejected: it is widely used for mDNS, pfSense warns against it, and Microsoft advises against it for Active Directory. `.internal` is reserved for private use. A non-routable domain will not sync to Entra ID as it is, so Phase 5 adds an alternate UPN suffix as described in the project brief.
 
 ### 5.6 Why a single lab zone for servers and clients
 
@@ -136,7 +136,7 @@ Default behaviour: pfSense blocks inbound traffic on WAN and OPT1, and allows ou
 
 | Interface | Rule | Purpose |
 |---|---|---|
-| WAN | Disable "Block private networks" | VirtualBox NAT gives the WAN a private 10.0.2.x address, which pfSense would otherwise treat as bogus. |
+| WAN | Disable "Block private networks" | The WAN sits behind VirtualBox NAT, so its gateway (10.0.2.2) and DNS (10.0.2.3) are private addresses. The block rule drops packets arriving on WAN from private sources, which can interfere with traffic from VirtualBox itself. Outbound internet access does not depend on it. |
 | LAN | Allow LAN to any (initial) | Lets hosts update. Tighten later (see below). |
 | OPT1 | Allow `10.0.66.2` to `10.0.10.0/24` (logged) | Permits attacker traffic into the lab and generates logs. |
 | OPT1 | Block and log everything else | Prevents the attacker zone reaching the internet through the lab firewall. |

@@ -8,8 +8,8 @@ Identity attacks are the thread through the whole project: password spraying, Ke
 
 | Phase | Description | Status |
 |---|---|---|
-| 0 | Setup, network design, repo | In progress |
-| 1 | Build and harden the domain | Not started |
+| 0 | Setup, network design, repo | Done |
+| 1 | Build and harden the domain | In progress (pfSense gateway built) |
 | 2 | Log, attack and detect | Not started |
 | 3 | DFIR investigation of the compromised DC | Not started |
 | 4 | Microsoft Sentinel and KQL | Not started |
