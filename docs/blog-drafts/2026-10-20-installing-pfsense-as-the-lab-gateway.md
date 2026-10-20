@@ -197,7 +197,3 @@ _Private networks allowed on the WAN, bogon networks blocked_
 
 Adding the firewall rule and the host route so my Arch machine can reach the lab zone through pfSense, then confirming the traffic appears in the firewall log.
 
-<!-- TODO before publishing:
-     - the dashboard and nslookup screenshots still show lab.local; the text explains the later rename
-     - check every screenshot for private details
--->

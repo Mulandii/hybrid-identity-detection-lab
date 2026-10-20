@@ -41,6 +41,8 @@ This document describes the network used by the lab and explains why each design
                └───────────┘        └───────────┘
 ```
 
+![Network diagram](diagrams/network-design.png)
+
 The firewall sits between the attacker zone and the lab zone. The attacker host cannot reach the domain controller or the workstation except by crossing pfSense.
 
 ## 3. Addressing plan

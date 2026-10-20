@@ -4,8 +4,8 @@ author: baraka
 date: 2026-10-19 12:00:00 +0300
 description: How I designed the network for my Hybrid Identity Detection Lab, why a firewall has to sit between the attacker and the domain, and the design mistake I caught before building anything.
 image:
-  path: /assets/images/Ninth_blog/vbox-lab-vms-snapshots.png
-  alt: The three lab VMs in VirtualBox, fw01, win11 and DC01, with fresh-install snapshots.
+  path: /assets/images/Ninth_blog/network-design.png
+  alt: Network diagram showing the attacker zone, the pfSense firewall fw01 and the Active Directory lab zone.
 categories: [ Networking, Homelab, Active Directory ]
 tags: [ pfSense, VirtualBox, Active Directory, Network Segmentation, Routing, Hybrid Identity Detection Lab ]
 ---
@@ -37,8 +37,8 @@ The network had to meet four requirements:
 
 * **Host:** Arch Linux laptop, 16 GB RAM, VirtualBox 7.2
 * **Firewall:** pfSense CE (VM `fw01`)
-* **Domain controller:** Windows Server evaluation (VM `dc01`)
-* **Client:** Windows 11 evaluation (VM `ws01`)
+* **Domain controller:** Windows Server 2022 evaluation (VM `DC01`)
+* **Client:** Windows 11 Pro (VM `win11`)
 * **Attacker:** the Arch host itself
 
 ![Desktop View](/assets/images/Ninth_blog/vbox-lab-vms-snapshots.png){: width="948" height="510" }
@@ -77,6 +77,9 @@ pfSense has three interfaces, one in each zone:
 | LAN | 10.0.10.1 | Gateway for the lab zone |
 | OPT1 | 10.0.66.1 | Gateway for the attacker zone and the sensor point |
 
+![Desktop View](/assets/images/Ninth_blog/network-design.png){: width="1800" height="930" }
+_Two zones with pfSense between them_
+
 ---
 
 ## Why each decision
@@ -114,7 +117,7 @@ Servers and clients share one subnet. In production I would split them, but it a
 * No bridged adapters, so nothing reaches the real network
 * IP forwarding stays off on the Arch host
 * My existing VirtualBox networks are untouched: I created a new Host-Only adapter and a new internal network name
-* Evaluation licences only
+* Windows Server evaluation media only, and Windows 11 installed without a product key
 * A snapshot before every major change and before every attack
 
 ---
@@ -131,11 +134,5 @@ I should have tested the design against the objectives before writing it up. The
 
 ## Next
 
-Installing pfSense and assigning its three interfaces. That is the next post.
+Installing pfSense and assigning its three interfaces. That is covered in the [next post](/posts/installing-pfsense-as-the-lab-gateway/).
 
-<!-- TODO before publishing:
-     - add a network diagram image (two zones with pfSense between them)
-     - save screenshots into assets/images/Ninth_blog/ and check them for private details
-     - confirm the outcome list matches what is actually built
-     - add a link to the GitHub repository
--->
