@@ -11,9 +11,9 @@ Things noticed during the build that are not blocking yet, and where they must b
 * **Why it matters:** Windows Firewall rules from Group Policy apply per profile. Rules set for the Domain profile will not apply to DC01 while it is on Public.
 * **Resolve before:** the Group Policy firewall hardening step in Phase 1. Options: apply the DC01 rules to all profiles, or add a startup task that restarts the adapter.
 
-## win11 receives the wrong DNS server from the lease
+## win11 received the wrong DNS server from the lease (resolved)
 
-* **Observed:** after switching `win11` to DHCP, `ipconfig /all` shows address `10.0.10.100` and DHCP server `10.0.10.10`, but DNS server `10.0.10.1` (pfSense) instead of `10.0.10.10` (DC01).
-* **Probable cause:** the DNS setting typed during the earlier static configuration was left on "Use the following DNS server addresses".
-* **Fix:** `Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ResetServerAddresses`, then renew the lease and confirm DNS is `10.0.10.10`.
-* **Resolve before:** joining `win11` to the domain, which needs DC01 as its DNS server.
+* **Observed:** after switching `win11` to DHCP, DNS was `10.0.10.1` (pfSense) instead of `10.0.10.10` (DC01).
+* **Cause:** the DNS value typed during the earlier static configuration was left on manual.
+* **Fix:** `Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ResetServerAddresses`. `ipconfig /all` then showed DNS `10.0.10.10`.
+* **Still to check:** `nslookup lab.internal` from `win11`, before joining the domain.

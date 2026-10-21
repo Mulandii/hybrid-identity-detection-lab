@@ -174,21 +174,34 @@ _The client's lease from DC01_
 * The **DHCP Server** line shows `10.0.10.10`, so DC01 issued the lease, not pfSense.
 * The gateway is `10.0.10.1` and the lease runs for 8 days.
 
-**One problem:** the DNS server in this output is `10.0.10.1`, which is pfSense, and not `10.0.10.10`, which is DC01. The client needs DC01 as its DNS server to join the domain. My likely explanation is that the fixed DNS setting from the earlier static configuration was left in place. I am treating this as open until I reset it and confirm the new value.
+**One problem:** the DNS server in this output is `10.0.10.1`, which is pfSense, and not `10.0.10.10`, which is DC01. The client needs DC01 as its DNS server to join the domain. The most likely explanation is that the fixed DNS setting from the earlier static configuration was left in place, so DHCP's DNS option was ignored.
+
+### The fix
+
+I reset the DNS setting to automatic and checked again:
+
+```powershell
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ResetServerAddresses
+ipconfig /all
+```
+
+![Desktop View](/assets/images/Thirteenth_blog/win11-dns-fixed.png){: width="1318" height="524" }
+_After the reset, the client's DNS server is DC01_
+
+The DNS server line now shows `10.0.10.10`, and the lease still comes from DC01. I have not yet tested name resolution for `lab.internal` from the client. That is the first thing to check before joining the domain.
 
 ---
 
 ## Outcome
 
 * The domain `lab.internal` exists, with DNS answering for it and SYSVOL and NETLOGON shared
-* DHCP is authorised and active, and the Windows 11 client received a lease from DC01
+* DHCP is authorised and active, and the Windows 11 client received a lease from DC01 with DC01 as its DNS server
 * Three snapshots mark the clean states along the way
 
 ## Open items
 
 * **DFSREvent warning** from `dcdiag`: read the DFS Replication log to confirm it is only first-boot noise
 * **Public network profile** on DC01 after a reboot: resolve before the firewall hardening step
-* **Client DNS** pointing at pfSense instead of DC01: reset to automatic and confirm
 
 ## What I would do differently
 
@@ -196,4 +209,4 @@ I would have read the `win11` DNS line right after changing it to automatic and 
 
 ## Next
 
-Fixing the client's DNS, joining the Windows 11 client to the domain, and creating the organisational units and 150 users with a PowerShell script.
+Testing name resolution for `lab.internal` from the Windows 11 client, joining it to the domain, and creating the organisational units and 150 users with a PowerShell script.
