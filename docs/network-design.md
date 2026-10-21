@@ -150,7 +150,7 @@ Default behaviour: pfSense blocks inbound traffic on WAN and OPT1, and allows ou
 ## 7. Isolation and safety controls
 
 - **No bridged adapters** on any lab VM.
-- **The Arch host must not forward lab traffic to the real network.** Checked on 2026-10-21: `net.ipv4.ip_forward` is `1`, because Docker is installed and enables it. Disabling it would break Docker, so the control is a host firewall rule that drops forwarded traffic to and from `vboxnet1` (in Docker's `DOCKER-USER` chain). **Not yet applied or verified.** See `open-items.md`.
+- **The Arch host must not forward lab traffic to the real network.** Checked on 2026-10-22: `net.ipv4.ip_forward` is `1` because Docker is installed. IPv4 is still blocked: the `FORWARD` policy is `DROP`, `DOCKER-USER` is empty, and `DOCKER-FORWARD` only accepts traffic from Docker's own bridges (`docker0`, `br-*`), so nothing accepts traffic from `vboxnet1`. IPv6 is blocked only because `net.ipv6.conf.all.forwarding` is `0`; the `ip6tables` `FORWARD` policy is `ACCEPT`. See `open-items.md`.
 - **The only internet path** is the pfSense WAN NAT adapter, used for updates.
 - **Attacks target only the lab ranges** `10.0.10.0/24`. Keep tooling scoped to that range.
 - **Evaluation licences and an isolated Entra test tenant** only.

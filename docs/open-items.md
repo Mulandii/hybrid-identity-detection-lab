@@ -22,7 +22,12 @@ Things noticed during the build that are not blocking yet, and where they must b
 ## IP forwarding is enabled on the Arch host
 
 * **Observed (2026-10-21):** `sysctl net.ipv4.ip_forward` returns `1`. Docker is installed and running, and enables forwarding.
-* **Risk:** the design says the host must not route between the lab (`vboxnet1`) and the real network. With forwarding on, that depends on the host firewall.
-* **Not verified:** the FORWARD rules, because reading them needs root.
-* **Plan:** check `sudo iptables -S FORWARD` and `sudo iptables -S DOCKER-USER`. Then drop forwarded traffic on the lab interface with `sudo iptables -I DOCKER-USER -i vboxnet1 -j DROP` and `sudo iptables -I DOCKER-USER -o vboxnet1 -j DROP`. Host-to-lab traffic (the attacks) is local output and is not affected. Make the rule persistent and verify from a lab VM that it cannot reach the real network through the host.
-* **Do not** simply set `ip_forward=0`: it would break the Docker containers on this machine.
+* **Checked (2026-10-22), IPv4 (blocked):** `iptables -S FORWARD` shows `-P FORWARD DROP`. `DOCKER-USER` is empty. `DOCKER-FORWARD` accepts only from `br-2aa2737ac351` and `docker0`, and jumps to `DOCKER-CT`, `DOCKER-INTERNAL` and `DOCKER-BRIDGE`. Nothing accepts traffic from `vboxnet1`, so forwarded lab traffic hits the DROP policy. The three sub-chains were not read; Docker keys them to its own bridges.
+* **Checked, IPv6 (weak control):** `ip6tables -S FORWARD` has `-P FORWARD ACCEPT`, but `net.ipv6.conf.all.forwarding` is `0`, so the kernel does not forward IPv6. If anything turns that setting on (Docker IPv6, a VPN), the lab could reach the real network over IPv6.
+* **Optional hardening:** `sudo iptables -I DOCKER-USER -i vboxnet1 -j DROP` and `-o vboxnet1`, plus `sudo ip6tables` equivalents, made persistent. Not applied yet; the IPv4 block does not depend on it.
+* **Still to do:** a live test from a lab VM that traffic cannot cross the host to the real network.
+* **Do not** set `ip_forward=0`: it would break the Docker containers on this machine.
+
+## Host route to the lab is not persistent
+
+* `sudo ip route add 10.0.10.0/24 via 10.0.66.1` is lost at reboot. Re-added on 2026-10-22. Make it persistent before Phase 2.
