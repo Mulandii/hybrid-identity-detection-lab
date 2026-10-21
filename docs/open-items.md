@@ -17,3 +17,11 @@ Things noticed during the build that are not blocking yet, and where they must b
 * **Cause:** the DNS value typed during the earlier static configuration was left on manual.
 * **Fix:** `Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ResetServerAddresses`. `ipconfig /all` then showed DNS `10.0.10.10`.
 * **Still to check:** `nslookup lab.internal` from `win11`, before joining the domain.
+
+## IP forwarding is enabled on the Arch host
+
+* **Observed (2026-10-21):** `sysctl net.ipv4.ip_forward` returns `1`. Docker is installed and running, and enables forwarding.
+* **Risk:** the design says the host must not route between the lab (`vboxnet1`) and the real network. With forwarding on, that depends on the host firewall.
+* **Not verified:** the FORWARD rules, because reading them needs root.
+* **Plan:** check `sudo iptables -S FORWARD` and `sudo iptables -S DOCKER-USER`. Then drop forwarded traffic on the lab interface with `sudo iptables -I DOCKER-USER -i vboxnet1 -j DROP` and `sudo iptables -I DOCKER-USER -o vboxnet1 -j DROP`. Host-to-lab traffic (the attacks) is local output and is not affected. Make the rule persistent and verify from a lab VM that it cannot reach the real network through the host.
+* **Do not** simply set `ip_forward=0`: it would break the Docker containers on this machine.
