@@ -31,3 +31,18 @@ Things noticed during the build that are not blocking yet, and where they must b
 ## Host route to the lab is not persistent
 
 * `sudo ip route add 10.0.10.0/24 via 10.0.66.1` is lost at reboot. Re-added on 2026-10-22. Make it persistent before Phase 2.
+
+## DC01 clock was wrong, fixed by a restart (cause not confirmed)
+
+* **Observed (2026-10-22):** DC01 showed the wrong date and time and the wrong time zone. `w32tm /resync` on DC01 and WS01 reported that the time change was too big.
+* **Fixed by:** restarting DC01. The time was correct afterwards. The restart is the only thing known to have changed it.
+* **Not known:** why it drifted, and why the restart fixed it. The offset was never measured (`w32tm /stripchart` was not run), the time source was never read (`w32tm /query /source`), and it is not confirmed whether the time zone was corrected.
+* **Why it matters:** Kerberos rejects logins when clocks differ by more than 5 minutes, and log timestamps become unreliable. Any events from before the fix have wrong timestamps.
+* **To do:** read `w32tm /query /source` and `/query /status`, set the time zone to `E. Africa Standard Time` on DC01 and WS01, point DC01 (the PDC emulator) at an external NTP source, and test UDP 123 with `w32tm /stripchart /computer:time.cloudflare.com /samples:3 /dataonly`. Check whether VirtualBox Guest Additions time sync is also active (`Get-Service VBoxService`), because two sources fight each other.
+
+## DC01 network icon says "no network" and Settings say "managed by your organisation"
+
+* **Observed (2026-10-22):** browsing works, but the network icon shows no network. The Settings app says some changes are managed by the organisation.
+* **Probable link:** the earlier finding that `IPv4Connectivity` is `LocalNetwork` while internet and DNS work. NCSI, the check behind the icon, probably fails its probe to `www.msftconnecttest.com`. Not confirmed.
+* **Not known:** which policy locks the settings. No Group Policy has been created yet.
+* **To do:** run `Get-NetConnectionProfile`, `Resolve-DnsName www.msftconnecttest.com`, an HTTP request to `http://www.msftconnecttest.com/connecttest.txt`, read the NlaSvc probe registry values, and `gpresult /scope computer /r`.
