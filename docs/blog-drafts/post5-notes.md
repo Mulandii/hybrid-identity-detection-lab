@@ -8,4 +8,6 @@ Collect here, then turn into the post once the rename and verification are done.
 - `Lab/Administrator` (forward slash) vs `Lab\Administrator` (backslash). Backslash is the DOMAIN\user separator. UPN form `administrator@lab.internal` also works. Case does not matter.
 - LAB vs WIN11 before the backslash = the authority that checks the password (domain via DC01, or this PC's local database). Local `WIN11\Administrator` and domain `LAB\Administrator` are separate accounts. After the rename the hint says WS01.
 - Screenshots to use: `ws01-login-sign-in-to-lab.png`, `ws01-login-slash-wrong.png`, `ws01-login-backslash-right.png` (blur the password dots), then the rename and verification output.
+- Verification screenshot (WS01 and DC01 side by side): `ws01-dc01-domain-verified.png` (sprite covered; the raw one is `ws01-dc01-domain-verified-raw.png`). Shows WS01 lab.internal PartOfDomain True, and Get-ADComputer listing DC01 and WS01 with no WIN11.
+- Sign-in with Lab\Administrator: `ws01-login-domain-lab.png`, and after rename `ws01-login-after-rename.png` (this one had only "Administrator" typed, so it points at the local WS01 account).
 - Detection tie-in: 4624/4625 logon events, and local vs domain logons look different.
