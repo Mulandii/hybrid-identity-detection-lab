@@ -62,3 +62,11 @@ Things noticed during the build that are not blocking yet, and where they must b
 * **Observed:** DC01 logged 4625 with Status `0xC0000133`, logon type 3, Kerberos, source 10.0.10.100 (WS01) at 2026-10-21 14:44:58, 2026-10-21 15:29:42 (twice), 2026-10-23 05:47:44 and 2026-10-25 23:00:43. No account name in any of them. The three from 21 October predate the domain join (early 22 October by VirtualBox's host-clock snapshot times), which is unexplained; DC01's clock was also unreliable around then.
 * **Verified:** the status is `STATUS_TIME_DIFFERENCE_AT_DC` (Kerberos clock skew, more than 5 minutes). `net helpmsg 1398` prints "There is a time and/or date difference between the client and server." Which of the two clocks was wrong is not known.
 * **To do:** measure WS01's offset (`w32tm /stripchart /computer:dc01.lab.internal /samples:3 /dataonly`), and find out whether VirtualBox Guest Additions time sync on WS01 competes with the domain time, or whether the VM is being paused or resumed.
+
+## `LAB\Domain Users` missing from login tokens (unexplained, parked)
+
+* **Observed 2026-10-22 to 2026-10-26:** `whoami /groups` as `tuser` on WS01 never lists `LAB\Domain Users`, for the original account and for a clean recreated one (SID ending 1107). The group `GG-Recover`/`GG-Test` does appear.
+* **Directory side is correct:** `PrimaryGroupID` is 513, and `net user tuser /domain` on WS01 lists `*Domain Users` under Global Group memberships.
+* **Administrator:** a `whoami /groups | findstr /i "Domain"` shows `LAB\Domain Admins` but not `LAB\Domain Users`. Which machine that was run on is not confirmed.
+* **Not known:** where the group disappears, and whether it is the same on DC01 and WS01.
+* **To do:** run `whoami /groups | findstr /i "Domain"` as Administrator on both DC01 and WS01 and compare.
