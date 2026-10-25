@@ -1,0 +1,151 @@
+GivenName,Surname,DisplayName,SamAccountName,UserPrincipalName,Department,Title,IsAdmin
+Charlotte,Kamau,Charlotte Kamau,charlotte.kamau,charlotte.kamau@lab.internal,Sales,Account Manager,No
+Zawadi,Mwangi,Zawadi Mwangi,zawadi.mwangi,zawadi.mwangi@lab.internal,Operations,Procurement Officer,No
+Lisa,Otieno,Lisa Otieno,lisa.otieno,lisa.otieno@lab.internal,Finance,Auditor,No
+Baraka,Mulandi,Baraka Mulandi,baraka.mulandi,baraka.mulandi@lab.internal,IT,Systems Administrator,Yes
+Isaac,Cheruiyot,Isaac Cheruiyot,isaac.cheruiyot,isaac.cheruiyot@lab.internal,HR,Training Coordinator,No
+Rehema,Wanjala,Rehema Wanjala,rehema.wanjala,rehema.wanjala@lab.internal,Sales,Customer Success Officer,No
+Irene,Omondi,Irene Omondi,irene.omondi,irene.omondi@lab.internal,Operations,Logistics Coordinator,No
+Tabitha,Muriuki,Tabitha Muriuki,tabitha.muriuki,tabitha.muriuki@lab.internal,Sales,Account Manager,No
+Elijah,Salim,Elijah Salim,elijah.salim,elijah.salim@lab.internal,Operations,Facilities Officer,No
+Zainab,Maina,Zainab Maina,zainab.maina,zainab.maina@lab.internal,Finance,Accountant,No
+Fatuma,Maina,Fatuma Maina,fatuma.maina,fatuma.maina@lab.internal,IT,Help Desk Technician,Yes
+Doreen,Nyambura,Doreen Nyambura,doreen.nyambura,doreen.nyambura@lab.internal,Sales,Business Development Officer,No
+Brian,Nyongesa,Brian Nyongesa,brian.nyongesa,brian.nyongesa@lab.internal,Operations,Facilities Officer,No
+Cynthia,Muriuki,Cynthia Muriuki,cynthia.muriuki,cynthia.muriuki@lab.internal,HR,Recruiter,No
+Wambui,Waweru,Wambui Waweru,wambui.waweru,wambui.waweru@lab.internal,Finance,Auditor,No
+Esther,Rotich,Esther Rotich,esther.rotich,esther.rotich@lab.internal,Sales,Account Manager,No
+Winnie,Mutiso,Winnie Mutiso,winnie.mutiso,winnie.mutiso@lab.internal,Operations,Warehouse Supervisor,No
+Irene,Mohamed,Irene Mohamed,irene.mohamed,irene.mohamed@lab.internal,Sales,Sales Executive,No
+Achieng,Kyalo,Achieng Kyalo,achieng.kyalo,achieng.kyalo@lab.internal,Operations,Warehouse Supervisor,No
+Brian,Mbugua,Brian Mbugua,brian.mbugua,brian.mbugua@lab.internal,IT,Database Administrator,Yes
+Mercy,Barasa,Mercy Barasa,mercy.barasa,mercy.barasa@lab.internal,Finance,Credit Controller,No
+Elijah,Nyambura,Elijah Nyambura,elijah.nyambura,elijah.nyambura@lab.internal,Sales,Customer Success Officer,No
+Fatuma,Njoroge,Fatuma Njoroge,fatuma.njoroge,fatuma.njoroge@lab.internal,Operations,Warehouse Supervisor,No
+George,Langat,George Langat,george.langat,george.langat@lab.internal,HR,Payroll Clerk,No
+Cynthia,Okello,Cynthia Okello,cynthia.okello,cynthia.okello@lab.internal,Sales,Account Manager,No
+Faith,Atieno,Faith Atieno,faith.atieno,faith.atieno@lab.internal,Operations,Logistics Coordinator,No
+Allan,Salim,Allan Salim,allan.salim,allan.salim@lab.internal,IT,Software Developer,Yes
+Dennis,Njoroge,Dennis Njoroge,dennis.njoroge,dennis.njoroge@lab.internal,Finance,Finance Analyst,No
+Elijah,Kiptoo,Elijah Kiptoo,elijah.kiptoo,elijah.kiptoo@lab.internal,Sales,Customer Success Officer,No
+Halima,Onyango,Halima Onyango,halima.onyango,halima.onyango@lab.internal,Operations,Logistics Coordinator,No
+Brian,Muriuki,Brian Muriuki,brian.muriuki,brian.muriuki@lab.internal,Sales,Sales Executive,No
+Wanjiru,Ochieng,Wanjiru Ochieng,wanjiru.ochieng,wanjiru.ochieng@lab.internal,Operations,Operations Officer,No
+Collins,Mburu,Collins Mburu,collins.mburu,collins.mburu@lab.internal,Finance,Finance Analyst,No
+Kiprop,Kamau,Kiprop Kamau,kiprop.kamau,kiprop.kamau@lab.internal,IT,Security Analyst,Yes
+Anthony,Rotich,Anthony Rotich,anthony.rotich,anthony.rotich@lab.internal,HR,HR Officer,No
+Joyce,Wafula,Joyce Wafula,joyce.wafula,joyce.wafula@lab.internal,Sales,Account Manager,No
+Joyce,Kigen,Joyce Kigen,joyce.kigen,joyce.kigen@lab.internal,Operations,Quality Inspector,No
+Njeri,Chepkoech,Njeri Chepkoech,njeri.chepkoech,njeri.chepkoech@lab.internal,Sales,Business Development Officer,No
+Beatrice,Karanja,Beatrice Karanja,beatrice.karanja,beatrice.karanja@lab.internal,Operations,Procurement Officer,No
+Collins,Mutiso,Collins Mutiso,collins.mutiso,collins.mutiso@lab.internal,Finance,Accounts Clerk,No
+Allan,Langat,Allan Langat,allan.langat,allan.langat@lab.internal,IT,Database Administrator,No
+Isaac,Bett,Isaac Bett,isaac.bett,isaac.bett@lab.internal,Sales,Customer Success Officer,No
+Cyrus,Njoroge,Cyrus Njoroge,cyrus.njoroge,cyrus.njoroge@lab.internal,Operations,Procurement Officer,No
+Kelvin,Onyango,Kelvin Onyango,kelvin.onyango,kelvin.onyango@lab.internal,HR,Recruiter,No
+Amina,Gitau,Amina Gitau,amina.gitau,amina.gitau@lab.internal,Finance,Accounts Clerk,No
+Moses,Abdi,Moses Abdi,moses.abdi,moses.abdi@lab.internal,Sales,Customer Success Officer,No
+Maureen,Langat,Maureen Langat,maureen.langat,maureen.langat@lab.internal,Operations,Facilities Officer,No
+Moses,Onyango,Moses Onyango,moses.onyango,moses.onyango@lab.internal,IT,Software Developer,No
+George,Kibet,George Kibet,george.kibet,george.kibet@lab.internal,Sales,Account Manager,No
+Victor,Kigen,Victor Kigen,victor.kigen,victor.kigen@lab.internal,Operations,Procurement Officer,No
+Amina,Langat,Amina Langat,amina.langat,amina.langat@lab.internal,Finance,Credit Controller,No
+Cyrus,Kimani,Cyrus Kimani,cyrus.kimani,cyrus.kimani@lab.internal,Sales,Customer Success Officer,No
+Joseph,Mwangi,Joseph Mwangi,joseph.mwangi,joseph.mwangi@lab.internal,Operations,Operations Officer,No
+Samuel,Njoroge,Samuel Njoroge,samuel.njoroge,samuel.njoroge@lab.internal,HR,Training Coordinator,No
+Diana,Kibet,Diana Kibet,diana.kibet,diana.kibet@lab.internal,Sales,Sales Executive,No
+Maureen,Mutiso,Maureen Mutiso,maureen.mutiso,maureen.mutiso@lab.internal,Operations,Warehouse Supervisor,No
+Patrick,Abdi,Patrick Abdi,patrick.abdi,patrick.abdi@lab.internal,IT,Security Analyst,No
+Mary,Wanjala,Mary Wanjala,mary.wanjala,mary.wanjala@lab.internal,Finance,Credit Controller,No
+Grace,Gitau,Grace Gitau,grace.gitau,grace.gitau@lab.internal,Sales,Sales Executive,No
+Elijah,Cheruiyot,Elijah Cheruiyot,elijah.cheruiyot,elijah.cheruiyot@lab.internal,Operations,Operations Officer,No
+Patrick,Bett,Patrick Bett,patrick.bett,patrick.bett@lab.internal,Sales,Sales Representative,No
+Kipchoge,Wafula,Kipchoge Wafula,kipchoge.wafula,kipchoge.wafula@lab.internal,Operations,Procurement Officer,No
+Kelvin,Njuguna,Kelvin Njuguna,kelvin.njuguna,kelvin.njuguna@lab.internal,Finance,Accounts Clerk,No
+Rose,Mbugua,Rose Mbugua,rose.mbugua,rose.mbugua@lab.internal,IT,Security Analyst,No
+Kevin,Wangari,Kevin Wangari,kevin.wangari,kevin.wangari@lab.internal,HR,Payroll Clerk,No
+Nancy,Okello,Nancy Okello,nancy.okello,nancy.okello@lab.internal,Sales,Account Manager,No
+Cynthia,Koech,Cynthia Koech,cynthia.koech,cynthia.koech@lab.internal,Operations,Quality Inspector,No
+Winnie,Atieno,Winnie Atieno,winnie.atieno,winnie.atieno@lab.internal,Sales,Sales Executive,No
+Sharon,Chepkoech,Sharon Chepkoech,sharon.chepkoech,sharon.chepkoech@lab.internal,Operations,Operations Officer,No
+Chebet,Koech,Chebet Koech,chebet.koech,chebet.koech@lab.internal,Finance,Accountant,No
+Patrick,Simiyu,Patrick Simiyu,patrick.simiyu,patrick.simiyu@lab.internal,IT,Security Analyst,No
+Lucy,Okello,Lucy Okello,lucy.okello,lucy.okello@lab.internal,Sales,Sales Representative,No
+Purity,Wafula,Purity Wafula,purity.wafula,purity.wafula@lab.internal,Operations,Logistics Coordinator,No
+Naomi,Kigen,Naomi Kigen,naomi.kigen,naomi.kigen@lab.internal,HR,Payroll Clerk,No
+Chebet,Wanjala,Chebet Wanjala,chebet.wanjala,chebet.wanjala@lab.internal,Finance,Auditor,No
+Lilian,Nyambura,Lilian Nyambura,lilian.nyambura,lilian.nyambura@lab.internal,Sales,Account Manager,No
+Joyce,Mbugua,Joyce Mbugua,joyce.mbugua,joyce.mbugua@lab.internal,Operations,Operations Officer,No
+Isaac,Njoroge,Isaac Njoroge,isaac.njoroge,isaac.njoroge@lab.internal,IT,Security Analyst,No
+Stephen,Musyoka,Stephen Musyoka,stephen.musyoka,stephen.musyoka@lab.internal,Sales,Business Development Officer,No
+Victor,Mbugua,Victor Mbugua,victor.mbugua,victor.mbugua@lab.internal,Operations,Quality Inspector,No
+Kamau,Kibet,Kamau Kibet,kamau.kibet,kamau.kibet@lab.internal,Finance,Credit Controller,No
+Faith,Adhiambo,Faith Adhiambo,faith.adhiambo,faith.adhiambo@lab.internal,Sales,Account Manager,No
+Cyrus,Mohamed,Cyrus Mohamed,cyrus.mohamed,cyrus.mohamed@lab.internal,Operations,Facilities Officer,No
+Kevin,Maina,Kevin Maina,kevin.maina,kevin.maina@lab.internal,HR,Payroll Clerk,No
+Maureen,Kibet,Maureen Kibet,maureen.kibet,maureen.kibet@lab.internal,Sales,Customer Success Officer,No
+Purity,Simiyu,Purity Simiyu,purity.simiyu,purity.simiyu@lab.internal,Operations,Quality Inspector,No
+Joseph,Rotich,Joseph Rotich,joseph.rotich,joseph.rotich@lab.internal,IT,Systems Administrator,No
+Mark,Muriuki,Mark Muriuki,mark.muriuki,mark.muriuki@lab.internal,Finance,Auditor,No
+Hellen,Kiptoo,Hellen Kiptoo,hellen.kiptoo,hellen.kiptoo@lab.internal,Sales,Sales Representative,No
+Abdi,Bett,Abdi Bett,abdi.bett,abdi.bett@lab.internal,Operations,Warehouse Supervisor,No
+Joseph,Mohamed,Joseph Mohamed,joseph.mohamed,joseph.mohamed@lab.internal,Sales,Customer Success Officer,No
+Peter,Simiyu,Peter Simiyu,peter.simiyu,peter.simiyu@lab.internal,Operations,Warehouse Supervisor,No
+Chebet,Kigen,Chebet Kigen,chebet.kigen,chebet.kigen@lab.internal,Finance,Auditor,No
+Vincent,Owino,Vincent Owino,vincent.owino,vincent.owino@lab.internal,IT,Systems Administrator,No
+Salma,Simiyu,Salma Simiyu,salma.simiyu,salma.simiyu@lab.internal,HR,Payroll Clerk,No
+Sharon,Salim,Sharon Salim,sharon.salim,sharon.salim@lab.internal,Sales,Business Development Officer,No
+Hassan,Bett,Hassan Bett,hassan.bett,hassan.bett@lab.internal,Operations,Facilities Officer,No
+Martin,Cheruiyot,Martin Cheruiyot,martin.cheruiyot,martin.cheruiyot@lab.internal,Sales,Account Manager,No
+Otieno,Ndungu,Otieno Ndungu,otieno.ndungu,otieno.ndungu@lab.internal,Operations,Facilities Officer,No
+Rose,Kigen,Rose Kigen,rose.kigen,rose.kigen@lab.internal,Finance,Auditor,No
+Naomi,Mbugua,Naomi Mbugua,naomi.mbugua,naomi.mbugua@lab.internal,IT,Software Developer,No
+Hellen,Kimani,Hellen Kimani,hellen.kimani,hellen.kimani@lab.internal,Sales,Customer Success Officer,No
+Hassan,Muriuki,Hassan Muriuki,hassan.muriuki,hassan.muriuki@lab.internal,Operations,Logistics Coordinator,No
+Janet,Njoroge,Janet Njoroge,janet.njoroge,janet.njoroge@lab.internal,HR,Recruiter,No
+Maureen,Njoroge,Maureen Njoroge,maureen.njoroge,maureen.njoroge@lab.internal,Finance,Auditor,No
+Elijah,Rotich,Elijah Rotich,elijah.rotich,elijah.rotich@lab.internal,Sales,Business Development Officer,No
+Kamau,Kigen,Kamau Kigen,kamau.kigen,kamau.kigen@lab.internal,Operations,Logistics Coordinator,No
+Mercy,Mohamed,Mercy Mohamed,mercy.mohamed,mercy.mohamed@lab.internal,IT,Network Engineer,No
+Lucy,Adhiambo,Lucy Adhiambo,lucy.adhiambo,lucy.adhiambo@lab.internal,Sales,Sales Executive,No
+Odhiambo,Cheruiyot,Odhiambo Cheruiyot,odhiambo.cheruiyot,odhiambo.cheruiyot@lab.internal,Operations,Warehouse Supervisor,No
+Kamau,Ndungu,Kamau Ndungu,kamau.ndungu,kamau.ndungu@lab.internal,Finance,Finance Analyst,No
+Winnie,Maina,Winnie Maina,winnie.maina,winnie.maina@lab.internal,Sales,Customer Success Officer,No
+Simon,Wekesa,Simon Wekesa,simon.wekesa,simon.wekesa@lab.internal,Operations,Operations Officer,No
+Cynthia,Simiyu,Cynthia Simiyu,cynthia.simiyu,cynthia.simiyu@lab.internal,HR,HR Officer,No
+Lucy,Kariuki,Lucy Kariuki,lucy.kariuki,lucy.kariuki@lab.internal,Sales,Account Manager,No
+Nancy,Langat,Nancy Langat,nancy.langat,nancy.langat@lab.internal,Operations,Warehouse Supervisor,No
+Winnie,Kibet,Winnie Kibet,winnie.kibet,winnie.kibet@lab.internal,IT,Systems Administrator,No
+Odhiambo,Omondi,Odhiambo Omondi,odhiambo.omondi,odhiambo.omondi@lab.internal,Finance,Accounts Clerk,No
+Collins,Njuguna,Collins Njuguna,collins.njuguna,collins.njuguna@lab.internal,Sales,Business Development Officer,No
+Otieno,Cheruiyot,Otieno Cheruiyot,otieno.cheruiyot,otieno.cheruiyot@lab.internal,Operations,Logistics Coordinator,No
+Moses,Karanja,Moses Karanja,moses.karanja,moses.karanja@lab.internal,Sales,Sales Representative,No
+Rose,Okello,Rose Okello,rose.okello,rose.okello@lab.internal,Operations,Operations Officer,No
+Moses,Njuguna,Moses Njuguna,moses.njuguna,moses.njuguna@lab.internal,Finance,Accountant,No
+Joseph,Okello,Joseph Okello,joseph.okello,joseph.okello@lab.internal,IT,Security Analyst,No
+Nancy,Omondi,Nancy Omondi,nancy.omondi,nancy.omondi@lab.internal,HR,Payroll Clerk,No
+Mercy,Musyoka,Mercy Musyoka,mercy.musyoka,mercy.musyoka@lab.internal,Sales,Sales Executive,No
+Salma,Mutua,Salma Mutua,salma.mutua,salma.mutua@lab.internal,Operations,Warehouse Supervisor,No
+Patrick,Koech,Patrick Koech,patrick.koech,patrick.koech@lab.internal,Sales,Account Manager,No
+Elijah,Mburu,Elijah Mburu,elijah.mburu,elijah.mburu@lab.internal,Operations,Facilities Officer,No
+Peter,Waweru,Peter Waweru,peter.waweru,peter.waweru@lab.internal,Finance,Auditor,No
+Nancy,Nyambura,Nancy Nyambura,nancy.nyambura,nancy.nyambura@lab.internal,IT,Security Analyst,No
+Anthony,Mburu,Anthony Mburu,anthony.mburu,anthony.mburu@lab.internal,Sales,Account Manager,No
+Stephen,Wekesa,Stephen Wekesa,stephen.wekesa,stephen.wekesa@lab.internal,Operations,Warehouse Supervisor,No
+Nancy,Kibet,Nancy Kibet,nancy.kibet,nancy.kibet@lab.internal,HR,HR Officer,No
+Moses,Barasa,Moses Barasa,moses.barasa,moses.barasa@lab.internal,Finance,Auditor,No
+Mark,Kigen,Mark Kigen,mark.kigen,mark.kigen@lab.internal,Sales,Business Development Officer,No
+Rehema,Macharia,Rehema Macharia,rehema.macharia,rehema.macharia@lab.internal,Operations,Warehouse Supervisor,No
+Stephen,Wanjala,Stephen Wanjala,stephen.wanjala,stephen.wanjala@lab.internal,IT,Security Analyst,No
+Felix,Koech,Felix Koech,felix.koech,felix.koech@lab.internal,Sales,Sales Representative,No
+Hassan,Wekesa,Hassan Wekesa,hassan.wekesa,hassan.wekesa@lab.internal,Operations,Procurement Officer,No
+Vincent,Mwangi,Vincent Mwangi,vincent.mwangi,vincent.mwangi@lab.internal,Finance,Auditor,No
+Susan,Kyalo,Susan Kyalo,susan.kyalo,susan.kyalo@lab.internal,Sales,Sales Representative,No
+Purity,Okello,Purity Okello,purity.okello,purity.okello@lab.internal,Operations,Facilities Officer,No
+Susan,Kamau,Susan Kamau,susan.kamau,susan.kamau@lab.internal,HR,Recruiter,No
+Kiprop,Salim,Kiprop Salim,kiprop.salim,kiprop.salim@lab.internal,Sales,Sales Representative,No
+Joyce,Njuguna,Joyce Njuguna,joyce.njuguna,joyce.njuguna@lab.internal,Operations,Facilities Officer,No
+Wambui,Onyango,Wambui Onyango,wambui.onyango,wambui.onyango@lab.internal,IT,Network Engineer,No
+Joseph,Kiptoo,Joseph Kiptoo,joseph.kiptoo,joseph.kiptoo@lab.internal,Finance,Accounts Clerk,No
+Mark,Langat,Mark Langat,mark.langat,mark.langat@lab.internal,Sales,Sales Executive,No
+Anthony,Simiyu,Anthony Simiyu,anthony.simiyu,anthony.simiyu@lab.internal,Operations,Procurement Officer,No

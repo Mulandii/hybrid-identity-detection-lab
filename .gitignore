@@ -1,0 +1,6 @@
+# Never commit generated secrets
+LabSecrets/
+initial-passwords*.csv
+*.pw
+*.pfx
+*.key
