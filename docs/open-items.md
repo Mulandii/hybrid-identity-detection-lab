@@ -49,3 +49,16 @@ Things noticed during the build that are not blocking yet, and where they must b
 * **Not known:** which policy locks the settings. No Group Policy has been created yet.
 * **Checked 2026-10-23:** `gpresult /scope computer /r` on DC01 lists only `Default Domain Controllers Policy` and `Default Domain Policy`; Local Group Policy is empty. So no custom policy causes the "managed by your organization" message. It is probably Windows' own behaviour on a domain controller, but that is not confirmed.
 * **To do:** run `Get-NetConnectionProfile`, `Resolve-DnsName www.msftconnecttest.com`, an HTTP request to `http://www.msftconnecttest.com/connecttest.txt`, read the NlaSvc probe registry values, and `gpresult /scope computer /r`.
+
+## DC01 does not audit failed Kerberos logons (to fix in Group Policy)
+
+* **Checked 2026-10-25:** `auditpol /get /subcategory:"Kerberos Authentication Service"` returns `Success` only. No event 4771 exists in DC01's Security log, and none of the wrong-password or disabled-account attempts from WS01 produced an event on DC01.
+* **What is recorded instead:** WS01 logs its own failed interactive logons as 4625 (logon type 2, sub status 0xC000006A for a wrong password).
+* **Fix:** in the audit policy GPO, set Kerberos Authentication Service to Success and Failure, plus the related Account Logon and Logon/Logoff subcategories. Needed before the Phase 2 password-guessing detections.
+* **Related:** domain `LockoutThreshold` is 0 and `MinPasswordLength` is 7. Set a lockout threshold in the same GPO step.
+
+## Recurring time-skew failures from WS01 (to verify)
+
+* **Observed:** DC01 logged 4625 with Status `0xC0000133`, logon type 3, Kerberos, source 10.0.10.100 (WS01) at 2026-10-23 05:47:44 and 2026-10-25 23:00:43. No account name in either.
+* **Belief, not verified:** the status is the Kerberos time-difference error, so WS01's clock was too far from DC01's. `net helpmsg 1398` should confirm the text.
+* **To do:** measure WS01's offset (`w32tm /stripchart /computer:dc01.lab.internal /samples:3 /dataonly`), and find out whether VirtualBox Guest Additions time sync on WS01 competes with the domain time, or whether the VM is being paused or resumed.
