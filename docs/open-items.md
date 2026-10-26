@@ -80,4 +80,4 @@ Things noticed during the build that are not blocking yet, and where they must b
 * `LAB-DC-Audit` applied and its `audit.csv` was correct, but `auditpol` stayed at `No Auditing` because the GPO's `gPCMachineExtensionNames` did not list the audit extension.
 * **Fix:** appended `[{F3CCC681-B74C-4060-9F26-CD84525DCA2A}{0F3F3735-573D-9804-99E4-AB2A69BA5FD4}]` with `Set-ADObject`, then `gpupdate /force`. `auditpol` then showed Success and Failure for Kerberos Authentication Service.
 * **Not known:** why GPMC did not register the extension itself. The tool GUID in the pair was not independently confirmed (the extension GUID was, on DC01). Expect the same for any new GPO with audit settings.
-* **Still to test:** that a wrong password now produces event 4771.
+* **Tested:** a wrong password for `elijah.salim` from WS01 now produces event 4771 (failure code 0x18) on DC01.

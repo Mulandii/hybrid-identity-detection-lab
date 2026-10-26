@@ -15,4 +15,6 @@ Caveats to state in the post:
 - Why GPMC did not register the audit extension on its own is unknown.
 - Fallbacks if it had not worked: put the settings in the Default Domain Controllers Policy, or run `auditpol` from a startup script.
 
-Still to do before writing: test that a wrong password now produces event 4771; then lockout/password policy, SMBv1/LLMNR/NBT-NS, firewall GPO, hardened baseline snapshot.
+8. Test: a wrong password for `elijah.salim` on WS01 now produces **event 4771** on DC01 (it never did before): `dc01-event-4771-after-audit-fix.png` (list plus the full message: account elijah.salim, service krbtgt/LAB, client ::ffff:10.0.10.100 = WS01, Failure Code 0x18 = wrong password, pre-auth type 2). `dc01-event-4771-list.png` is the list alone.
+
+Still to do before writing: then lockout/password policy, SMBv1/LLMNR/NBT-NS, firewall GPO, hardened baseline snapshot.
