@@ -12,6 +12,10 @@ Things noticed during the build that are not blocking yet, and where they must b
 * **Why it matters:** Windows Firewall rules from Group Policy apply per profile. Rules set for the Domain profile will not apply to DC01 while it is on Public.
 * **Resolve before:** the Group Policy firewall hardening step in Phase 1. Options: apply the DC01 rules to all profiles, or add a startup task that restarts the adapter.
 
+* **Update 2026-10-26:** about five hours after DC01's last boot (25 Oct 22:08), `Get-NetConnectionProfile` shows `DomainAuthenticated`, with `IPv4Connectivity LocalNetwork`. Whether the profile is correct *right after a boot* is not re-tested: needs a reboot and a check as soon as the desktop loads.
+* **NCSI probes all pass:** `dns.msftncsi.com` resolves to 131.107.255.255, `www.msftconnecttest.com` resolves, and the HTTP probe returns "Microsoft Connect Test". The `LocalNetwork` label (and the "no network" icon) is therefore unexplained. It does not affect AD, DNS or DHCP.
+* **Decision:** apply the Windows Firewall rules for DC01 to all profiles, so the policy does not depend on the profile name.
+
 ## win11 received the wrong DNS server from the lease (resolved)
 
 * **Observed:** after switching `win11` to DHCP, DNS was `10.0.10.1` (pfSense) instead of `10.0.10.10` (DC01).
